@@ -1,0 +1,760 @@
+
+/* MyPageMain CSS 시작 */
+
+.mypage-main-wrapper {
+  width: 85%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* 마이페이지 사이드 시작 */
+.mypage-main-sidemenu {
+  /* border: 1px solid blue; */
+  box-sizing: border-box;
+  width: 200px;
+  position: relative;
+  text-align: center;
+
+}
+ /* 마이페이지 사이드 끝 */
+
+ /* 마이페이지 프로필 시작 */
+.mypage-main-container {
+  /* border: 1px solid green; */
+  box-sizing: border-box;
+  flex-grow: 1;
+  position: relative;
+}
+.mypage-main-sidemenu> .mypage-sidemenu-title a{
+    text-decoration-line: none;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+.mypage-sidemenu-title{
+    width: 190px;
+    height: 150px;
+    margin: 60px 0 0px;
+}
+.mypage-sidemenu-title> h5{
+    font-weight: 600;
+}
+.mypage-profile{
+  /* border: 1px solid green; */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background-image: url(../img/마이페이지배너2.png);
+  background-size : cover;
+
+
+}
+.mypage-profile-image {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px 10px 20px 80px;
+}
+/* 마이페이지 프로필 끝 */
+/* 마이페이지 메뉴바 시작 */
+.mypage-list-title{
+    display: flex;
+}
+.mypage-list-menu{
+    /* border: 1px solid rgb(135, 211, 28); */
+    box-sizing: border-box;
+    width: 33.33%;
+    height: 80px;
+    text-align: center;
+    padding-top: 20px;
+
+}
+.mypage-list-menu> a{
+    text-decoration-line: none;
+    color: black;
+    font-weight: 600;
+}
+.mypage-list-line1,.mypage-list-line2,.mypage-list-line3{
+    width: 100%;
+    height: 5px;
+    background-color: lightgray;
+    display: block;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.mypage-list-line1{
+    background-color: rgb(75, 75, 75);
+}
+/* 마이페이지 메뉴바 끝 */
+
+/* 방문 예정 리스트 시작 */
+.mypage-appointment-list-wrapper{
+  /*   border: 1px solid rgb(28, 55, 211); */
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 auto;
+    position: relative;
+}
+
+.mypage-appointment-list{
+    /* border: 1px solid rgb(211, 126, 28); */
+    box-sizing: border-box;
+    margin: 10px 30px 50px;
+    width: 90%;
+    height: 160px;
+    padding: 5px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+.mypage-appointment-list-img{
+    /* border: 1px solid rgb(135, 211, 28); */
+    box-sizing: border-box;
+    width :140px;
+    height : 140px;
+    display: inline-block;
+    text-align: center;
+    margin: 5px 30px 5px;
+}
+.mypage-appointment-list-img img{
+    width :125px;
+    height : 125px;
+    object-fit: contain;
+}
+.mypage-appointment-text-container{
+    /* border: 1px solid rgb(16, 232, 203); */
+    box-sizing: border-box;
+    display: inline-block;
+    width: 500px;
+    height: 125px;
+    margin: 5px 30px 5px;
+    
+
+}
+.mypage-appointment-text-container> span{
+    margin-top: 10px;
+   
+}
+.mypage-appointment-list-title{
+    /* border: 1px solid rgb(16, 232, 203); */
+    box-sizing: border-box;
+    font-weight: 600;
+}
+.mypage-appointment-list-cancel{
+    /* border: 1px solid rgb(16, 232, 203); */
+    box-sizing: border-box;
+    width: 140px;
+    height: 140px;
+    padding-top: 40px;
+    margin: 5px 10px 5px 250px;
+    text-align: center;
+
+}
+.mypage-btn-cancel{
+    border: none;
+    border-radius: 5px;
+    font-size: 11px;
+    width: 70px;
+    height: 30px;
+    color: rgb(76, 76, 76);
+}
+.mypage-appointment-list-title,.mypage-appointment-list-time{
+    display: inline-block;
+}
+.mypage-appointment-list-keyword{
+    width: 50px;
+    height: 20px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    font-size: 10px;
+    display: inline-block;
+    text-align: center;
+    padding-top: 2px;
+    color: rgb(103, 103, 103);
+}
+/* 방문 예정 리스트 끝 */
+
+/* 추천 상품 리스트 시작 */
+.mypage-popular-list{
+    /* border: 1px solid rgb(211, 126, 28); */
+    box-sizing: border-box;
+    margin: 100px 50px 50px;
+    width: 90%;
+    height: 300px;
+    /* display: flex;
+    flex-direction: row; */
+    /* justify-content: space-between; */
+}
+
+.mypage_most_slide_wrapper *{margin:0; padding:0;}
+li{list-style:none;}
+.flex{
+display:flex;
+}
+.mypage_most_slide_wrapper{
+  /* border: 2px solid rgb(255, 234, 187); */
+  position:relative;
+  margin:0 auto;
+  height:250px;
+  overflow:hidden;
+  width: calc(180px * 5 + 90px * 3);
+}
+.mypage_most_slides {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    transition: left 0.5s ease-out;
+
+}
+
+.mypage_most_slides li:not(:last-child){
+  display: inline-block;
+  margin: 40px;
+  /* border: 1px solid black; */
+
+}
+.mypage_most_slides li {
+  display: flex;
+  margin: 40px;
+  /* border: 1px solid black; */
+   width: 200px
+}
+.mypage_most_slides li > img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.mypage_most_slide_controls{
+text-align:center;
+}
+
+.mypage_most_slide_controls span{
+z-index:10;
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+}
+
+.mypage_most_slide_controls>.prev{
+right:calc(100% - 40px);
+}
+
+.mypage_most_slide_controls>.next{
+left:calc(100% - 40px);
+}
+.mypage_most_slide_controls img{
+  z-index: 20;
+  width: 20px;
+  height: 20px;
+}
+/* 추천 상품 리스트 끝 */
+
+/* 결제 취소 모달창 시작 */
+.mypage_delete_more{
+position: fixed;
+top: 0; left: 0;
+width: 100%; height: 100%;
+background-color: rgb(0, 0, 0, 0.7);
+display: none;
+z-index: 9996;
+}
+.mypage_delete_more_check{
+position: fixed;
+top: 50%; left: 50%;
+transform: translate(-50%, -50%);
+box-sizing: border-box;
+border-radius: 10px;
+background-color: white;
+width: 320px; height: 150px; z-index: 9997;
+text-align: center;
+margin: auto;
+}
+.mypage_delete_more_check>b{
+box-sizing: border-box;
+font-size: 30px;
+}
+.mypage_delete_more_check_yes{
+box-sizing: border-box;
+background-color: #f7e8ad;
+border: 1px solid gray;
+border-radius: 5px;
+margin-top: 14px;
+padding-top:5px; padding-bottom: 5px;
+padding-left:25px; padding-right:25px;
+}
+.mypage_delete_more_check_yes:hover{
+background-color: lightgray;
+color: gray;
+}
+.mypage_delete_more_check_no{
+box-sizing: border-box;
+border: 1px solid gray;
+border-radius: 5px;
+padding-top:5px; padding-bottom: 5px;
+padding-left:13px; padding-right:13px;
+}
+.mypage_delete_more_check_no:hover{
+background-color: lightgray;
+color: gray;
+}
+/* 결제 취소 모달창 끝 */
+
+/* MyPageMain CSS 끝 */
+
+
+
+/* MyPageReservStatus CSS 시작 */
+
+/* 마이페이지 메뉴바 시작 */
+.mypage-list2-line1,.mypage-list2-line2,.mypage-list2-line3{
+  width: 100%;
+  height: 5px;
+  background-color: lightgray;
+  display: block;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.mypage-list2-line2{
+  background-color: rgb(75, 75, 75);
+}
+/* 마이페이지 메뉴바 끝 */
+
+/* 방문 예정 리스트 시작 */
+.mypage-reserv-status{
+  margin-left: 10px;
+  font-weight: 400;
+  border: 1px solid #fecb8c;
+  border-radius: 5px;
+  width: 70px;
+  /* height: 30px; */
+  font-size:small;
+  display: inline-block;
+  text-align: center;
+}
+
+.mypage-appointment-list-container> span> h4{
+  margin: 80px 0 0 50px;
+}
+
+.mypage-btn-cancel, .mypage-btn-payment, .mypage-btn-cancel-details{
+  border: none;
+  border-radius: 5px;
+  font-size: 11px;
+  width: 70px;
+  height: 30px;
+  color: rgb(76, 76, 76);
+  margin: 3px;
+}
+
+/* 방문 예정 리스트 끝 */
+
+
+/* 결제 모달창 시작 */
+.mypage_payment_more{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgb(0, 0, 0, 0.7);
+  display: none;
+  z-index: 9996;
+}
+.mypage_payment_more_check{
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: white;
+  width: 320px; height: 150px; z-index: 9997;
+  text-align: center;
+  margin: auto;
+}
+.mypage_payment_more_check>b{
+  box-sizing: border-box;
+  font-size: 30px;
+}
+.mypage_payment_more_check_yes{
+  box-sizing: border-box;
+  background-color: #f7e8ad;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-top: 14px;
+  padding-top:5px; padding-bottom: 5px;
+  padding-left:25px; padding-right:25px;
+}
+.mypage_payment_more_check_yes:hover{
+  background-color: lightgray;
+  color: gray;
+}
+.mypage_payment_more_check_no{
+  box-sizing: border-box;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding-top:5px; padding-bottom: 5px;
+  padding-left:13px; padding-right:13px;
+}
+.mypage_payment_more_check_no:hover{
+  background-color: lightgray;
+  color: gray;
+}
+/* 결제 취소 모달창 끝 */
+
+/* MyPageReservStatus CSS 끝 */
+
+
+/* MyPageEditInfo CSS 시작 */
+
+/* 마이페이지 메뉴바 시작 */
+
+.mypage-list3-line1,.mypage-list3-line2,.mypage-list3-line3{
+  width: 100%;
+  height: 5px;
+  background-color: lightgray;
+  display: block;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.mypage-list3-line3{
+  background-color: rgb(75, 75, 75);
+}
+/* 마이페이지 메뉴바 끝 */
+
+/* 내 정보 수정 시작 */
+.mypage-appointment-list-wrapper{
+  /* border: 1px solid rgb(28, 55, 211); */
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  /* display: flex; */
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+  position: relative;
+}
+.mypage-profile-img-edit{
+/* border: 1px solid red; */
+width: 250px;
+height: 300px;
+margin: 0 auto;
+top: 100px;
+text-align: center;
+}
+.mypage-profile-img-edit> label{
+background-color: lightgray;
+width: 180px;
+height: 30px;
+border-radius: 5px;
+padding-top: 2px;
+}
+
+.mypage-myimg{
+width: 200px;
+height: 200px;
+border-radius: 50%;
+border: none;
+overflow: hidden;
+background-color: #FAF0E4;
+margin-bottom: 20px;
+object-fit: cover;
+}
+
+
+.mypage-editinfo-list-wrapper{
+/* border: 1px solid green; */
+width: 80%;
+height: 800px;
+margin: 0 auto;
+}
+
+.mypage-editinfo-list{
+  margin-top: 10px;
+  margin-left: 50px;
+
+}
+.mypage-editinfo-list> input{
+  /* margin-top: 50px; */
+  width: 700px;
+  height: 30px;
+  /* margin-bottom: 15px;
+  margin-top: -7px; */
+  margin: -7px 10px 10px ;
+  padding-left: 5px;
+  font-size: 13px;
+  font-weight: 400;
+  color: purple;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  
+}
+
+.umypage-editinfo-list{
+  line-height: 1px;
+  font-size: 12px;
+}
+.mypage-editinfo-list> h6{
+  margin-left: 15px;
+  margin-top: 10px;
+}
+.mypage-editinfo-list> span{
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+.user-loginbtn2{
+  /* border: 1px solid red;
+  box-sizing: border-box; */
+  width: 350px;
+  height: 50px;
+  display: block;
+  position: relative;
+  top: 70px;
+  margin: 0 auto;
+  left: 25%;
+}
+.user-loginbtn2> .user-gobtn, .user-backbtn{
+  width: 100px;
+  height: 40px;
+  margin: 0 35px 0 ;
+  background-color: #f7e8ad;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  font-weight: 400;
+  color: gray;
+}
+
+
+/* 내 정보 수정 끝 */
+
+/* MyPageEditInfo CSS 끝 */
+
+/* 회원탈퇴 모달창 시작 */
+      /* 1. 회원 탈퇴 모달창 시작 */
+.mypage_Withdrawal_more{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgb(0, 0, 0, 0.7);
+  display: none;
+  z-index: 9996;
+}
+.mypage_Withdrawal_more_check{
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: white;
+  width: 500px; height: 500px; z-index: 9997;
+  text-align: center;
+  margin: auto;
+}
+.mypage_Withdrawal_more_check>b{
+  box-sizing: border-box;
+  font-size: 30px;
+}
+.mypage_Withdrawal_contents{
+    border: 1px solid #FAF0E4;
+    width: 450px;
+    height: 250px;
+    display: inline-block;
+    margin: 0 auto;
+    top: 100px;
+    padding:  70px 40px 0;
+}
+.mypage_Withdrawal_contents> h6{
+    font-weight: 600;
+}
+.mypage_Withdrawal_contents> p{
+    font-size: 15px;
+}
+    
+.mypage_Withdrawal_more_check_yes{
+  box-sizing: border-box;
+  background-color: #f7e8ad;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-top: 40px;
+  margin-right: 20px;
+  padding-top:5px; padding-bottom: 5px;
+  padding-left:25px; padding-right:25px;
+  border: none;
+  }
+.mypage_Withdrawal_more_check_yes:hover{
+  background-color: lightgray;
+  color: gray;
+}
+.mypage_Withdrawal_more_check_no{
+  box-sizing: border-box;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-left: 20px;
+  padding-top:5px; padding-bottom: 5px;
+  padding-left:13px; padding-right:13px;
+  border: none;
+}
+.mypage_Withdrawal_check_no:hover{
+  background-color: lightgray;
+  color: gray;
+} 
+/* 1. 회원 탈퇴 모달창 끝 */
+
+/* 2. 회원 탈퇴 안내 모달창 시작 */
+
+  .mypage_Withdrawal_final{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgb(0, 0, 0, 0.7);
+  display: none;
+  z-index: 9996;
+  }
+  .mypage_Withdrawal_final_check{
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: white;
+  width: 500px; height: 500px; z-index: 9997;
+  text-align: center;
+  margin: auto;
+  }
+  .mypage_Withdrawal_final_check>b{
+  box-sizing: border-box;
+  font-size: 30px;
+  }
+  .mypage_Withdrawal_contents{
+      border: 1px solid #FAF0E4;
+      width: 450px;
+      height: 300px;
+      display: inline-block;
+      margin: 0 auto;
+      padding:  30px 40px 0;
+  }
+  .mypage_Withdrawal_contents> h6{
+      font-weight: 600;
+  }
+  .mypage_Withdrawal_contents> p{
+      font-size: 15px;
+  }
+  
+  .mypage_Withdrawal_final_check_yes{
+  box-sizing: border-box;
+  background-color: #f7e8ad;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-top: 40px;
+  margin-right: 20px;
+  padding-top:5px; padding-bottom: 5px;
+  padding-left:25px; padding-right:25px;
+  border: none;
+  }
+  .mypage_Withdrawal_final_check_yes:hover{
+  background-color: lightgray;
+  color: gray;
+  }
+  .mypage_Withdrawal_final_check_no{
+  box-sizing: border-box;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-left: 20px;
+  padding-top:5px; padding-bottom: 5px;
+  padding-left:13px; padding-right:13px;
+  border: none;
+  }
+  .mypage_Withdrawal_final_check_no:hover{
+  background-color: lightgray;
+  color: gray;
+  }
+  
+/* 2. 회원 탈퇴 안내 모달창 끝 */
+
+
+
+/* 회원탈퇴 모달창 끝 */
+
+/* 1. 완료한 클래스 모달창 시작 */
+.mypage_details_more{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgb(0, 0, 0, 0.7);
+  display: none;
+  z-index: 9996;
+}
+.mypage_details_more_check{
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: white;
+  width: 400px; height: 500px; z-index: 9997;
+  text-align: center;
+  margin: auto;
+}
+.mypage_details_more_check>b{
+  box-sizing: border-box;
+  font-size: 30px;
+}
+.mypage_details_contents{
+  border: 1px solid #FAF0E4;
+  width: 450px;
+  height: 300px;
+  display: inline-block;
+  margin: 0 auto;
+  top: 100px;
+  padding:  70px 40px 0;
+}
+.mypage_details_contents> h6{
+  font-weight: 600;
+}
+.mypage_details_contents> p{
+  font-size: 15px;
+}
+
+.mypage_details_more_check_yes{
+  box-sizing: border-box;
+  background-color: #f7e8ad;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-top: 40px;
+  margin-right: 20px;
+  padding-top:5px; padding-bottom: 5px;
+  padding-left:25px; padding-right:25px;
+  border: none;
+}
+.mypage_details_more_check_yes:hover{
+  background-color: lightgray;
+  color: gray;
+}
+.mypage_details_more_check_no{
+  box-sizing: border-box;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-left: 20px;
+  padding-top:5px; padding-bottom: 5px;
+  padding-left:13px; padding-right:13px;
+  border: none;
+}
+.mypage_details_check_no:hover{
+  background-color: lightgray;
+  color: gray;
+}
+/* 완료한 클래스 모달창 끝 */
+

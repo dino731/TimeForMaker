@@ -1,0 +1,277 @@
+   
+/* SignUpCondition CSS 시작 */
+.user-login-wrapper{
+  width: 85%;
+  height: 900px;
+  margin: 0 auto;
+  display:block;
+  text-align: center;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+}
+.user-login-area{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    top: 20px;
+    border: 1px solid rgb(0, 26, 255);
+    box-sizing: border-box;
+    background-color: rgb(244, 244, 244);
+    position: relative;
+
+
+}
+.user-login-chapter> .user-login-chap1, .user-login-chap2, .user-login-chap3{
+  /* border: 1px solid rgb(255, 255, 255); */
+  width: 29px;
+  height: 29px;
+  border-radius: 50px;
+  display: inline-block;
+  color: rgb(73, 73, 73);
+  padding: 2px 0 0;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  
+}
+.user-login-chapter> .user-login-chap1{
+  background-color: #FF8551;
+  font-size: 14px;
+  
+}
+.user-login-chapter> .user-login-chap2, .user-login-chap3{
+  background-color: rgb(231, 231, 231);
+  font-size: 14px;
+}
+.user-login-condition-wapper{
+  width: 500px;
+  height: 600px;
+  /* border: 1px solid greenyellow; */
+  margin: 0 auto;
+  /* background-color: rgb(244, 244, 244); */
+  text-align: start;
+  position: relative;
+
+
+}
+.user-login-title-wapper{
+  /* border: 1px solid greenyellow; */
+  width: 500;
+  height: 40px;
+  padding-top: 5px;
+  margin-top: 20px;
+}
+.user-login-condition-title, .user-login-condition-must{
+  font-size: 16px;
+  font-weight: 600;
+}
+.user-login-condition-must{
+  color: rgb(0, 157, 107);
+}
+.user-login-condition-contents{
+  width: 500px;
+  height: 150px;
+  /* border: 1px solid greenyellow; */
+  margin: 0 auto;
+  background-color: rgb(244, 244, 244);
+  text-align: start;
+  top: 10px;
+  bottom: 10px;
+  position: static;
+  padding: 5px 10px 5px;
+  color: rgb(80, 80, 80);
+  overflow: overlay;
+ 
+
+}
+.user-login-agree-check{
+  margin-left: 250px;
+}
+.user-loginbtn{
+    /* border: 1px solid red;
+    box-sizing: border-box; */
+    width: 350px;
+    height: 50px;
+    display: block;
+    position: relative;
+    top: 70px;
+    margin: 0 auto;
+}
+.user-loginbtn> .user-gobtn, .user-backbtn{
+    width: 100px;
+    height: 40px;
+    margin: 0 35px 0 ;
+    background-color: #f7e8ad;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(69, 69, 69);
+}
+/* SignUpCondition CSS 끝 */
+
+/* SignUpKeyword CSS 시작 */
+.user-login-chapter> .user-login2-chap1, .user-login2-chap2, .user-login2-chap3{
+  /* border: 1px solid rgb(255, 255, 255); */
+  width: 29px;
+  height: 29px;
+  border-radius: 50px;
+  display: inline-block;
+  color: rgb(73, 73, 73);
+  padding: 2px 0 0;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  
+}
+.user-login-chapter> .user-login2-chap3{
+  background-color: #FF8551;
+  font-size: 14px;
+  
+}
+.user-login-chapter> .user-login2-chap2, .user-login2-chap1{
+  background-color: rgb(231, 231, 231);
+  font-size: 14px;
+}
+.user-login-keyword-wapper{
+  width: 500px;
+  height: 600px;
+  /* border: 1px solid greenyellow; */
+  margin: 0 auto;
+  /* background-color: rgb(244, 244, 244); */
+  text-align: start;
+  position: relative;
+
+
+}
+.user-login-keyword-title{
+  /* border: 1px solid greenyellow; */
+  width: 490px;
+  height: 130px;
+  padding-top: 5px 10px 0;
+  margin: 20px 5px 0;
+}
+.user-login-keyword-box label{
+  width: 65px;
+  height: 25px;
+  background-color: #FAF0E4;
+  /* background-color: #fadcbd; */
+  display: inline-block;
+  cursor: pointer;
+  font-size: 12px !important;
+  border-radius: 5px;
+  margin: 3px 10px 3px;
+  text-align: center;
+  padding-top: 3px;
+
+}
+.user-login-keyword-title> h6{
+  margin-left: 10px;
+}
+/* SignUpKeyword CSS 끝 */
+
+/* SignUpUserInfo CSS 시작 */
+.user-login-wrapper{
+  width: 85%;
+  height: 900px;
+  margin: 0 auto;
+  display:block;
+  text-align: center;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+}
+.user-login-area{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    top: 20px;
+    /* border: 1px solid rgb(0, 26, 255);
+    box-sizing: border-box; */
+    background-color: rgb(244, 244, 244);
+    position: relative;
+
+
+}
+.user-login-chapter> .user-login3-chap1, .user-login3-chap2, .user-login3-chap3{
+  /* border: 1px solid rgb(255, 255, 255); */
+  width: 29px;
+  height: 29px;
+  border-radius: 50px;
+  display: inline-block;
+  color: rgb(73, 73, 73);
+  padding: 2px 0 0;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  
+}
+.user-login-chapter> .user-login3-chap2{
+  background-color: #FF8551;
+  font-size: 14px;
+  
+}
+.user-login-chapter> .user-login3-chap1, .user-login3-chap3{
+  background-color: rgb(231, 231, 231);
+  font-size: 14px;
+}
+.user-login-condition-wapper{
+  width: 500px;
+  height: 600px;
+  /* border: 1px solid greenyellow; */
+  margin: 0 auto;
+  /* background-color: rgb(244, 244, 244); */
+  text-align: start;
+  position: relative;
+  background-color : red;
+}
+
+.user-loginbtn{
+    /* border: 1px solid red;
+    box-sizing: border-box; */
+    width: 350px;
+    height: 50px;
+    display: block;
+    position: relative;
+    top: 70px;
+    margin: 0 auto;
+}
+.user-loginbtn> .user-gobtn, .user-backbtn{
+    width: 100px;
+    height: 40px;
+    margin: 0 35px 0 ;
+    background-color: #f7e8ad;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    color: gray;
+}
+.user-login-condition-wapper {
+  margin-top: 50px;
+
+}
+.user-login-condition> input{
+  /* margin-top: 50px; */
+  width: 450px;
+  height: 30px;
+  /* margin-bottom: 15px;
+  margin-top: -7px; */
+  margin: -7px 10px 10px ;
+  padding-left: 5px;
+  font-size: 13px;
+  color: purple;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  
+}
+
+.user-login-condition{
+  line-height: 1px;
+  font-size: 12px;
+}
+.user-login-condition> h6{
+  margin-left: 15px;
+}
+
+
+/* SignUpUserInfo CSS 시작 */

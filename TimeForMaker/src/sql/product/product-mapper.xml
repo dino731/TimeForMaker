@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="selectProduct">
+        SELECT PRODUCT_NO,
+        CLASS_NAME,
+        PRICE,
+        LOCATION,
+        MAX_PERSON,
+        DELETE_CHECK,
+        VIEWS,
+        RATING,
+        NOTICE,
+        NOW_PERSON,
+        CLASS_INTRO,
+        CLASS_PROGRESS,
+        CLASS_KEYWORD,
+        CLASS_CATEGORY,
+        CLASS_OPTION
+        FROM PRODUCT P
+        LEFT JOIN PRODUCT_INFO USING (PRODUCT_NO)
+        WHERE PRODUCT_NO = ?
+<!--        AND DELETE_CHECK = 'N'-->
+    </entry>
+
+
+<!--    조회수 SQL-->
+    <entry key="increaseCount">
+        UPDATE PRODUCT
+        SET VIEWS = VIEWS + 1
+        WHERE PRODUCT_NO = ?
+<!--        AND DELETE_CHECK = 'N'-->
+    </entry>
+
+    <entry key="selectFile">
+        SELECT REF_NO, FILE_NAME, FILE_SAVE_PATH, FILE_LEVEL
+        FROM PRODUCT_FILE
+        WHERE REF_NO = ?
+        ORDER BY FILE_LEVEL ASC
+    </entry>
+
+
+    <entry key="paymentProduct">
+        SELECT PRODUCT_NO,
+        CLASS_NAME,
+        PRICE,
+        LOCATION,
+        MAX_PERSON,
+        DELETE_CHECK,
+        VIEWS,
+        RATING,
+        NOTICE,
+        NOW_PERSON,
+        CLASS_INTRO,
+        CLASS_PROGRESS,
+        CLASS_KEYWORD,
+        CLASS_CATEGORY,
+        CLASS_OPTION
+        FROM PRODUCT P
+        LEFT JOIN PRODUCT_INFO USING (PRODUCT_NO)
+        WHERE PRODUCT_NO = ?
+        <!--        AND DELETE_CHECK = 'N'-->
+    </entry>
+
+    <entry key="getAllProducts">
+        SELECT PRODUCT_NO,
+        CLASS_NAME,
+        PRICE,
+        LOCATION,
+        MAX_PERSON,
+        DELETE_CHECK,
+        VIEWS,
+        RATING,
+        NOTICE,
+        NOW_PERSON,
+        CLASS_INTRO,
+        CLASS_PROGRESS,
+        CLASS_KEYWORD,
+        CLASS_CATEGORY,
+        CLASS_OPTION
+        FROM PRODUCT P
+        LEFT JOIN "PRODUCT_INFO" USING (PRODUCT_NO)
+    </entry>
+
+    <entry key="getAllFiles">
+        SELECT REF_NO, FILE_NAME, FILE_SAVE_PATH, FILE_LEVEL
+        FROM PRODUCT_FILE
+        WHERE FILE_LEVEL = '1'
+    </entry>
+
+
+
+
+
+
+
+
+</properties>

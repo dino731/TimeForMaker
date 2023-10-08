@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+<!-- 아래부터 member sql입니다  -->
+<entry key="loginMember">
+	SELECT *
+	FROM MEMBER
+	WHERE USER_ID = ?
+		AND USER_PWD = ?
+		AND USER_TYPE = 'Y'
+</entry>
+<entry key="insertMember">
+	INSERT INTO MEMBER(
+						USER_NO,
+						USER_ID,
+						USER_NAME,
+						USER_PWD,
+						USER_NICK,
+						USER_PHONE
+						)
+	VALUES(SEQ_USERNO.NEXTVAL,
+			?,
+			?,
+			?,
+			?,
+			?		
+			)
+</entry>
+<entry key="idCheck">
+	SELECT COUNT(*)
+	FROM MEMBER
+	WHERE USER_ID = ?
+</entry>
+<entry key="insertClassKeyword">
+	INSERT INTO USER_KEYWORD(CLASS_KEYWORD,USER_ID)
+	VALUES(?,?)
+</entry>
+
+<entry key="selectMember">
+	SELECT *
+	FROM MEMBER
+	WHERE USER_ID = ?
+		AND USER_TYPE = 'Y'
+</entry>
+<entry key="deleteMember">
+	UPDATE MEMBER
+	   SET USER_TYPE = 'N' 
+	 WHERE USER_ID = ? 
+	   AND USER_PWD = ?
+</entry>
+<!-- member sql 끝 -->
+
+
+
+<!-- 아래부터 mapage sql입니다  -->
+
+<entry key="MyEditUpdate">
+  UPDATE MEMBER
+    SET USER_NAME = ?,
+        USER_PWD = ?,
+        USER_NICK = ?,
+        USER_PHONE = ?,
+        USER_MODIFY = SYSDATE
+    WHERE USER_ID = ?
+</entry>
+<entry key="mymainreserv">
+SELECT R.RESERVATION_NO, R.RESERVATION_DATE, R.RESERVATION_STATUS, R.RESERVATION_TIME, R.PAYMENT_STATUS,  R.USER_NUM,  R.PRODUCT_NO, P.CLASS_NAME, P.PRICE, F.FILE_SAVE_PATH, PI.CLASS_KEYWORD, R.USER_ID, F.FILE_NAME
+	FROM RESERVATION R 
+	JOIN PRODUCT P ON R.PRODUCT_NO = P.PRODUCT_NO
+	JOIN PRODUCT_INFO PI ON P.PRODUCT_NO = PI.PRODUCT_NO
+	JOIN PRODUCT_FILE F ON P.PRODUCT_NO = F.REF_NO
+	WHERE R.USER_ID = ? 
+		AND R.PAYMENT_STATUS = '결제완료' 
+		AND R.RESERVATION_STATUS = '예약완료' 
+		AND F.FILE_LEVEL = 1 
+		AND R.RESERVATION_DATE <![CDATA[ > ]]> ?
+    ORDER BY R.RESERVATION_DATE DESC
+</entry>
+<entry key="myreserv">
+	SELECT R.RESERVATION_NO, R.RESERVATION_DATE, R.RESERVATION_STATUS, R.RESERVATION_TIME, R.PAYMENT_STATUS,  R.USER_NUM,  R.PRODUCT_NO, P.CLASS_NAME, P.PRICE, F.FILE_SAVE_PATH, PI.CLASS_KEYWORD, R.USER_ID, F.FILE_NAME
+	FROM RESERVATION R
+	JOIN PRODUCT P ON R.PRODUCT_NO = P.PRODUCT_NO
+	JOIN PRODUCT_INFO PI ON P.PRODUCT_NO = PI.PRODUCT_NO
+	JOIN PRODUCT_FILE F ON P.PRODUCT_NO = F.REF_NO
+	WHERE R.USER_ID = ? AND R.RESERVATION_STATUS = '승인대기' AND F.FILE_LEVEL = 1
+	ORDER BY R.RESERVATION_DATE DESC
+
+</entry>
+<entry key="mymaindone">
+	SELECT R.RESERVATION_NO, R.RESERVATION_DATE, R.RESERVATION_STATUS, R.RESERVATION_TIME, R.PAYMENT_STATUS,  R.USER_NUM,  R.PRODUCT_NO, P.CLASS_NAME, P.PRICE, F.FILE_SAVE_PATH, PI.CLASS_KEYWORD, R.USER_ID, F.FILE_NAME
+	FROM RESERVATION R
+	JOIN PRODUCT P ON R.PRODUCT_NO = P.PRODUCT_NO
+	JOIN PRODUCT_INFO PI ON P.PRODUCT_NO = PI.PRODUCT_NO
+	JOIN PRODUCT_FILE F ON P.PRODUCT_NO = F.REF_NO
+	WHERE R.USER_ID = ? 
+		AND R.PAYMENT_STATUS = '결제완료' 
+		AND R.RESERVATION_STATUS = '예약완료' 
+		AND F.FILE_LEVEL = 1 
+		AND R.RESERVATION_DATE <![CDATA[ < ]]> ?
+	ORDER BY R.RESERVATION_DATE DESC
+</entry>
+
+<!-- mypage sql 끝 -->
+
+
+
+
+<!-- 아래부터 reservation sql입니다  -->
+<entry key="searchPeriod">
+	   SELECT *
+	   FROM RESERVATION
+	   WHERE RESERVATION_DATE BETWEEN TO_DATE(?, 'yy/MM/dd') AND TO_DATE(?, 'yy/MM/dd')
+	</entry>
+	
+	<entry key="searchInfo">
+	 SELECT * FROM RESERVATION
+	 WHERE RESERVATION_NO = ?
+	</entry>
+	
+	<entry key="searchStatus">
+	   SELECT *
+	   FROM RESERVATION
+	   WHERE RESERVATION_STATUS = ?
+	</entry>
+	
+	<entry key="search">
+	   SELECT *
+	   FROM RESERVATION
+	   WHERE 1=1
+	      AND %1 
+	      AND %2 
+	      AND RESERVATION_STATUS LIKE '%%' 
+	</entry>
+
+
+	<entry key="reservationMore">
+		SELECT RESERVATION_NO, USER_NAME, CLASS_NAME, USER_NUM, RESERVATION_DATE, RESERVATION_TIME, USER_PHONE, USER_ID, RESERVATION_STATUS
+		FROM RESERVATION
+		JOIN MEMBER USING(USER_ID)
+		JOIN PRODUCT USING(PRODUCT_NO)
+		WHERE RESERVATION_NO = ?
+	</entry>
+	
+	
+	<entry key="acceptReservation">
+		UPDATE RESERVATION
+		SET RESERVATION_STATUS = '예약완료'
+		WHERE RESERVATION_NO = ?
+	</entry>
+	<entry key="deleteReservation">
+		UPDATE RESERVATION
+		SET RESERVATION_STATUS = '예약취소'
+		WHERE RESERVATION_NO = ?
+	</entry>
+	
+	
+	<entry key="insertReservation">
+		INSERT into RESERVATION(
+			USER_ID, 
+			PRODUCT_NO, 
+			USER_NUM, 
+			RESERVATION_DATE)
+    	VALUES(?, ?, ?, TO_DATE(?, 'yy/MM/dd'));
+	</entry>
+	
+	<!-- 페이징바관련 -->
+	<entry key="selectListCount">
+		SELECT COUNT(*)
+		FROM RESERVATION
+	</entry>
+	<entry key="selectList">
+		SELECT *
+		FROM (
+			SELECT ROWNUM RNUM , A.*
+			FROM(
+				SELECT
+					RESERVATION_NO,
+					RESERVATION_DATE,
+					RESERVATION_STATUS,
+					RESERVATION_TIME,
+					PAYMENT_STATUS,
+					USER_NUM,
+					USER_ID,
+					PRODUCT_NO
+				FROM RESERVATION
+				JOIN MEMBER USING(USER_ID)
+				JOIN PRODUCT USING(PRODUCT_NO)
+				)A
+			)
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+
+<!-- reservation sql 끝 -->
+
+
+</properties>

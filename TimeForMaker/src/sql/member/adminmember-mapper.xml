@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<entry key="selectListCount">
+		SELECT COUNT(*)
+		FROM MEMBER
+	</entry>
+
+	<entry key="selectList">
+		SELECT *
+		FROM (
+		    SELECT ROWNUM RNUM , A.*
+		    FROM (
+			    SELECT 
+			    	USER_NO,
+			        USER_ID,
+			        USER_NAME,
+			       	USER_NICK,
+			       	USER_PHONE,
+			        USER_ENROLL,
+			        USER_MODIFY,
+			        USER_TYPE,
+			        MANAGER_TYPE
+			    FROM MEMBER M) A
+		     ) 
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	<entry key="adminUpdateMember">
+		UPDATE MEMBER
+		SET USER_NAME = ? ,
+		    USER_NICK = ? ,
+		    USER_PHONE = ? ,
+		    USER_MODIFY = SYSDATE,
+		    MANAGER_TYPE=?
+		WHERE USER_ID = ?
+	</entry>
+	<entry key="selectUpdateMember">
+		SELECT
+			USER_NO,
+			USER_ID,
+			USER_NAME,
+			USER_NICK,
+			USER_PHONE,
+			MANAGER_TYPE
+		FROM MEMBER M
+		WHERE USER_NO = ?
+	</entry>
+
+	<entry key="adminDeleteMember">
+		UPDATE MEMBER
+		SET USER_TYPE ='N',
+			 USER_MODIFY = SYSDATE
+		WHERE USER_ID = ?
+	</entry>
+
+	<entry key="searchMemberList">
+	<![CDATA[
+		SELECT *
+		FROM (
+		    SELECT ROWNUM RNUM , A.*
+		    FROM (
+			    SELECT 
+			    	USER_NO,
+			        USER_ID,
+			        USER_NAME,
+			       	USER_NICK,
+			       	USER_PHONE,
+			        USER_ENROLL,
+			        USER_MODIFY,
+			        USER_TYPE,
+			        MANAGER_TYPE
+			    FROM MEMBER M
+			    WHERE USER_NO LIKE ?
+					OR USER_ID LIKE ?
+					OR USER_NAME LIKE ?
+					OR USER_NICK LIKE ?
+					OR USER_PHONE LIKE ?
+					OR USER_ENROLL LIKE ?
+					OR USER_MODIFY LIKE ?
+					OR USER_TYPE LIKE ?
+					OR MANAGER_TYPE LIKE ?
+			    ) A
+		     ) 
+		WHERE RNUM BETWEEN ? AND ?
+		]]>
+	</entry>
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</properties>

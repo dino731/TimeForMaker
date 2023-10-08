@@ -1,0 +1,166 @@
+/* SEARCH_CONDITION */
+.reservation_content{
+    background-color: #ffffff;
+    width: 100%; height: 100%;
+}
+.search_head_title{
+    box-sizing: border-box;
+    width: 60%;
+    margin: auto;
+    padding-top: 8px;
+    padding-bottom: 3px;
+}
+.search_condition{
+    box-sizing: border-box;
+    border: 4px double #FF8551;
+    background-color: white;
+    width: 60%;
+    height: 150px;
+    margin: auto;
+}
+.search_condition_options{
+    box-sizing: border-box;
+    width: 80%;
+    padding-top: 15px;
+}
+.search_condition_options li{
+    line-height: 40px;
+    list-style-position: inside;
+}
+#search_calendar{
+    box-sizing: border-box;
+    height: 30px;
+    width: 150px;
+}
+#search_reservation_no{
+    box-sizing: border-box;
+    height: 30px;
+}
+#search_reservation_no{
+    width: 330px;
+}
+#search_value_btn{
+    box-sizing: border-box;
+    border: 1px solid gray;
+    background-color: #f7e8ad;
+    padding: 40px;
+    border-radius: 10px;
+    font-weight: 800;
+    float: right;
+    position: relative;
+    top:-130px; right: -130px;
+}
+#search_value_btn:hover{
+    background-color: #FAF0E4;
+}
+
+/* SEARCH_RESULT */
+.search_result_head{
+    box-sizing: border-box;
+    width: 60%;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 8px;
+}
+#search_result_table thead{
+    box-sizing: border-box;
+    transform: translateY(-6px)
+}
+#new_register_btn{
+    background-color: #f7e8ad;
+    border: 1px solid gray;
+    font-weight: 800;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top:5px; padding-bottom:5px;
+    border-radius: 10px;
+    float: right;
+    position: relative;
+    right: -320px;
+    top: -35px;
+}
+#new_register_btn:hover{
+    background-color: #FAF0E4;
+    color: gray;
+}
+.search_result{
+    box-sizing: border-box;
+    border: 4px double #FF8551;
+    background-color: white;
+    width: 60%;
+    height: 500px;
+    margin: auto;
+}
+.search_list_area{
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    top: -30px;
+}
+.search_list_area *{
+    box-sizing: border-box;
+    text-align: center;
+}
+.search_list_area th{
+    box-sizing: border-box;
+    padding-bottom: 3px;
+}
+.search_list_area td{
+    box-sizing: border-box;
+    padding-top: 5px;
+}
+.search_list_area thead{
+    border-bottom: 1px solid gray;
+    border-collapse: collapse;
+}
+.search_list_area tbody{
+    font-weight: 500;
+}
+#reservation_info{
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: #f7e8ad;
+    width: 100%;
+    font-size: 12px;
+}
+#reservation_info:hover{
+    color: gray;
+    background-color: #FAF0E4;
+}
+
+.button-container{
+	box-sizing:border-box;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    margin: 0 auto;
+}
+.button-container button {
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: #f7e8ad;
+    font-size: 12px; flex-grow: 1;
+    margin: 0 5px; 
+}
+
+#result_accept,#result_delete{
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: #f7e8ad;
+    font-size: 12px;
+}
+#result_accept:hover,#result_modify:hover,#result_delete:hover{
+    background-color: #FAF0E4;
+    color: gray;
+}
+
+/* PAGING-BAR */
+/* .paging-area button{ */
+/*     box-sizing: border-box; */
+/*     border: 1px solid gray; */
+/*     background-color: #f7e8ad; */
+/* } */

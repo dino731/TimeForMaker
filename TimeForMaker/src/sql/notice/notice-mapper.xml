@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<!-- <entry key="login">
+		select * from member where user_id='admin@admin.com'  admin@admin.com test@test.com
+	</entry> -->
+	
+	<entry key="selectAllUploadedNotice">
+		select rownum, n.*
+		from (select * from notice where save='N' order by create_date desc) n
+	</entry>
+	
+	<entry key="countAllSavedNotice">
+		select count(*) count from notice where save='Y'
+	</entry>
+	
+	<entry key="selectImportantNotice">
+		<!-- select rownum, n.* from notice n where save='N' and impt='Y' order by create_date desc -->
+		select rownum, n.* from (select  * from notice where save='N' and impt='Y' order by create_date) n 
+		order by rownum desc
+	</entry>
+	
+	<entry key="selectNormNoticeList">
+		select *
+		from (select rownum rnum, n.* from (select  * from notice where save='N' and impt='N' order by create_date) n order by rnum desc)
+		where rnum between ? and ?
+	</entry>
+	
+	<entry key="searchNoticeTitle">
+		select *
+		from (select rownum rnum, n.* 
+			from notice n where save='N' and impt='N' and title like '%'||?||'%'
+			order by create_date desc)
+		where rnum between ? and ?
+	</entry>
+	
+	<entry key="searchNoticeContent">
+		select *
+		from (select rownum rnum, n.* 
+			from notice n where save='N' and impt='N' and content like '%'||?||'%'
+			order by create_date desc) 
+		where rnum between ? and ?
+	</entry>
+	
+	<entry key="searchNotice">
+		select *
+		from (select rownum rnum, n.*
+			from notice n where save='N' and impt='N' and (title like '%'||?||'%' or content like '%'||?||'%')
+			order by create_date desc) 
+		where rnum between ? and ?
+	</entry>
+	
+	<entry key="selectSavedNoticeList">
+		select *
+		from (select rownum rnum, n.* from notice n where save='Y' order by create_date desc) 
+		where rnum between ? and ?
+	</entry>
+	
+	<entry key="selectUploadeNotice">
+		select *
+		from (select rownum rnum, n.* from notice n where save='N' and impt=?)
+		where rnum=? 
+	</entry>
+	
+	<entry key="selectSavedNotice">
+		select *
+		from notice where save='Y' and notice_no=?
+	</entry>
+	
+	<entry key="updateNotice">
+		update notice set title=?, content=?, create_date=sysdate ,save=?, impt=?
+		where notice_no=?
+	</entry>
+	
+	<entry key="insertNotice">
+		insert into notice(notice_no, title, content, save, impt)
+		values('N'||lpad(seq_notice.nextval,4,0), ?, ?, ?, ?)
+	</entry>
+	
+	<entry key="deleteNotice">
+		delete from notice where notice_no=?
+	</entry>
+</properties>

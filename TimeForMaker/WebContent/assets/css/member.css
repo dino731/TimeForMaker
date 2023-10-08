@@ -1,0 +1,217 @@
+@charset "UTF-8";
+/*
+회원관리 Css
+*/
+.member_all{
+	padding-top: 110px !important;
+    width: 100%;
+    height: 900px;
+   }
+   .member_search{
+    display: inline-block;
+    position: relative;
+    left: 1040px;
+    margin-bottom: 1px;
+   }
+   .mem_search_text{
+    border: 1px solid gray;
+    border-radius: 4px;
+   }
+   .mem_search_btn{
+    border: 1px solid gray;
+    border-radius: 4px;
+   }
+   .member_filter{
+    display: inline-block;
+    position: relative;
+    left: 0px;
+   }
+   
+    .member_table {
+        width: 100%;
+        border-top: 2px solid gray;
+        border-bottom: 2px solid gray;
+        text-align:center;
+    }
+    .member_table > thead > tr > th {
+        box-sizing: border-box;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid gray;
+        border-collapse: collapse;
+    }
+    .member_table>tbody>tr>td{
+        box-sizing: border-box;
+        padding-top: 10px; padding-bottom: 10px;
+    }
+    
+
+    .member_table>tbody>tr:hover{
+        background-color: rgba(255, 133, 81, 0.4);
+        cursor: pointer;
+    }
+    .member_modify{
+        background-color: #FAF0E4;
+        border-radius: 5px;
+    }
+    .member_delete{
+        border-radius: 5px;
+    }
+    /*수정버튼누르면 나오는 모달창*/
+    .member_modify_content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        z-index: 9991;
+    }
+
+    .member_modify_modal_rap {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        border-radius: 10px;
+        background-color: white;
+        width: 400px;
+        height: 440px;
+        z-index: 9992;
+        text-align: center;
+    }
+
+    .member_modify_info {
+        box-sizing: border-box;
+        width: 80%;
+        height: 78%;
+        margin: auto;
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .member_modify_info table {
+        line-height: 220%;
+    }
+    .member_modify_info td, #member_modify_info th {
+        border-style: none; /*테이블 라인 안없어져서 붙임 ㅠ.ㅠ*/
+    }
+    .member_modify_info_name,#member_modify_info_nickname,#member_modify_info_phonenum{
+        width:200px; height: 25px;
+    }
+    .mem_modal_modify {
+        border: 1px solid gray;
+        background-color: #FAF0E4;
+        margin-top: 15px;
+        border-radius: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .mem_modal_modify:hover{
+        background-color: rgba(255, 133, 81, 0.4);
+    }
+
+    .mem_modal_close {
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .mem_modal_close:hover{
+        background-color: rgba(255, 133, 81, 0.4);
+    }
+    .member_modify_modal_check {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: none;
+        z-index: 9993;
+    }
+
+    .member_modify_modal_check_checked>b {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        border-radius: 10px;
+        background-color: white;
+        width: 20%;
+        height: 20%;
+        z-index: 9994;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 30px;
+        font-size: 30px;
+    }
+
+    .mem_modify_modal_check_close {
+        border: 1px solid gray;
+        border-radius: 5px;
+        position: fixed;
+        top: 52%;
+        left: 47.5%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        z-index: 9995;
+    }
+
+    /*수정 css 끝*/
+    /*탈퇴창 css*/
+    .member_delete_more{
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgb(0, 0, 0, 0.7);
+        display: none;
+        z-index: 9996;
+    }
+    .member_delete_more_check{
+        position: fixed;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        border-radius: 10px;
+        background-color: white;
+        width: 320px; height: 150px; z-index: 9997;
+        text-align: center;
+        margin: auto;
+    }
+    .member_delete_more_check>b{
+        box-sizing: border-box;
+        font-size: 20px;
+    }
+    .mem_delete_more_check_yes{
+        box-sizing: border-box;
+        background-color: #FAF0E4;
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin-top: 14px;
+        padding-top:5px; padding-bottom: 5px;
+        padding-left:25px; padding-right:25px;
+    }
+    .mem_delete_more_check_yes:hover{
+        background-color: rgba(255, 133, 81, 0.4);
+    }
+    .mem_delete_more_check_no{
+        box-sizing: border-box;
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding-top:5px; padding-bottom: 5px;
+        padding-left:13px; padding-right:13px;
+    }
+    .mem_delete_more_check_no:hover{
+        background-color: rgba(255, 133, 81, 0.4);
+    }

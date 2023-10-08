@@ -1,0 +1,185 @@
+@charset "UTF-8";
+body {
+    box-sizing: border-box;
+    height: 1000px;
+}
+
+div {
+    /* border: 1px blue solid; */
+}
+
+.main_logo {
+    width: 60%;
+}
+
+#product-main {
+    height: 100%;
+    width: 100vw;
+    margin: 2% auto;
+    /* border: 1px red solid; */
+}
+
+#product-main-box {
+    height: 100%;
+    width: 75vw;
+    display: flex;
+    margin-left: 12%;
+}
+
+#product-left-box {
+    flex: 5.75;
+    height: 100%;
+}
+
+#product-center-box {
+    flex: 3.5;
+    height: 100%;
+}
+
+.arrow {
+    margin-top: 4px;
+    width: 15px;
+    height: 15px;
+    border: solid #333333;
+    border-width: 0 2px 2px 0;
+    transform: rotate(135deg);
+    position: absolute;
+    background-color: transparent;
+    transition: transform 0.1s ease-in-out;
+}
+
+.arrow.down {
+    transform: rotate(-90deg);
+}
+
+.product-a-underline {
+    color: inherit;
+    text-decoration: none;
+    scroll-margin-top: 50px;
+}
+
+.product-payment-box {
+    width: 95%;
+    height: 700px;
+    margin: 20px auto;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2), 7px 7px 7px 7px rgba(0, 0, 0, 0.1);
+}
+
+.product-payment-topbar {
+    width: 100%;
+    height: 75px;
+    background-color: #bebebe;
+}
+
+.product-payment-topbar>p {
+    margin-left: 2%;
+    padding-top: 2.5%;
+}
+
+.product-payment-imgbox {
+    width: 55%;
+    height: 55%;
+    margin: 1% auto;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.product-payment-imgbox img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.product-payment-textbox {
+    margin-left: 1.5%;
+    margin-top: 2%;
+    height: 50px;
+}
+
+.product-center-refund-box {
+    width: 95%;
+    height: 320px;
+    margin: 20px auto;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2), 7px 7px 7px 7px rgba(0, 0, 0, 0.1);
+}
+
+.product-refund-topbar {
+    padding-top: 4%;
+    padding-left: 3%;
+    width: 100%;
+    height: 75px;
+    background-color: #bebebe;
+}
+
+.arrow2 {
+    /* margin-left: 4%; */
+    width: 15px;
+    height: 15px;
+    border: solid #333333;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    background-color: transparent;
+    transition: transform 0.1s ease-in-out;
+    float: right;
+    margin-right: 4%;
+}
+
+.arrow2.down {
+    transform: rotate(-90deg);
+}
+
+.product-refund-content {
+    /* border: 1px solid black; */
+    width: 95%;
+    margin: 2% auto;
+}
+
+.product-refund-table {
+    /* border: 1px solid black; */
+    margin: 2% auto;
+    width: 95%;
+}
+
+.product-refund-table td {
+    border: 1px solid black;
+    width: 50%;
+    height: 40px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.product-refund-table tr:nth-child(1),
+.product-refund-table tr:nth-child(3) {
+    background-color: rgb(199, 199, 199);
+}
+
+.product-center-payinfo-box {
+    width: 95%;
+    height: 320px;
+    margin: 20px auto;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2), 7px 7px 7px 7px rgba(0, 0, 0, 0.1);
+}
+
+.product-payinfo-content {
+    /* border: solid 1px black; */
+    width: 95%;
+    margin: 2% auto;
+    height: 70%;
+}
+
+.product-payinfo-content1 {
+    width: 95%;
+}
+
+.product-paybtn {
+    width: 90%;
+    margin: 5% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}

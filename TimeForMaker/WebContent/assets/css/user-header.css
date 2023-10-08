@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/*
+유저 상단바 푸터 Css
+*/
+.main_nav_all{ /*상단바 고정*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 9999;
+    opacity: 0.9;
+}
+.main_logo{/*로고 사이즈 조절*/
+    width: 60%;
+}
+#templatemo_search{/*검색모달창*/
+    margin-top: 90px;
+}
+.main_footer{
+    background-color: #FAF0E4; /*푸터 배경색*/
+}

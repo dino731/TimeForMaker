@@ -1,0 +1,52 @@
+.reservation_delete_more{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+    display: none;
+    z-index: 9996;
+}
+.reservation_delete_more_check{
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: white;
+    width: 320px; height: 200px; z-index: 9997;
+    text-align: center;
+    margin: auto;
+}
+#reservation_delete_more_check_information{
+    box-sizing: border-box;
+    width: 80%; margin: auto;
+    text-align: left;
+}
+.reservation_delete_more_check>b{
+    box-sizing: border-box;
+    font-size: 30px;
+}
+#rs_delete_more_check_yes{
+    box-sizing: border-box;
+    background-color: #f7e8ad;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-top:5px; padding-bottom: 5px;
+    padding-left:25px; padding-right:25px;
+}
+#rs_delete_more_check_yes:hover{
+    background-color: lightgray;
+    color: gray;
+}
+#rs_delete_more_check_no{
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-top:5px; padding-bottom: 5px;
+    padding-left:13px; padding-right:13px;
+}
+#rs_delete_more_check_no:hover{
+    background-color: lightgray;
+    color: gray;
+}

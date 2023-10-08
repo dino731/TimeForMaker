@@ -1,0 +1,732 @@
+/*
+Custom Css
+*/
+
+/* 공통 컨텐츠 부분*/
+.notice-side-container, .reception-side-container{
+    margin-bottom: 10%;
+    width: 85%;
+    /* border: 1px solid red; */
+    position: relative;
+    left: 7.5%;
+    text-align: center;
+    display: inline-block;
+}
+
+.customer-center-title, #notice-save-board-area>h3{margin-top: 6%; margin-bottom: 2%; font-weight: 600;}
+
+/* Start 공지사항 게시판, 임시저장 게시판 */
+*{box-sizing: border-box;}
+
+#notice-board-area tr, #notice-save-board-area tr{font-size: 0.98rem;}
+
+.side-menu{
+    width: 10%; 
+    /* height:2%; */
+    position: absolute;
+    top: 30%;
+    left: 7%;
+    text-align: center;
+}
+
+.side-menu>.list-group{height: 2rem;}
+
+.side-menu .list-group-item:first-child{border-bottom: 1.5px solid black;}
+
+.side-menu .list-group-item:first-child>span{
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.side-menu .list-group-item a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.side-menu-selected{
+    background-color: #ff8551 !important;
+    opacity: 0.8 !important;
+    color:white;
+}
+
+.list-group-sub{
+    cursor: pointer;
+}
+
+.side-menu .list-group-item:last-child{border-bottom: 1px solid black !important;}
+
+#notice-board-area, .notice-board-area, #notice-save-board-area{
+    width: 70%;
+    position: relative;
+    left: 5%;
+    /* margin-top: 5%; */
+    /* border: 1px solid red; */
+    display: inline-block;
+}
+
+#notice-save-board-area>h3{font-weight: 600; margin-bottom: 2%; margin-top: 20%;}
+
+#notice-board-area>table, #notice-save-board-area>table{
+    text-align: center;
+}
+
+#notice-board-area>table tr, #notice-save-board-area>table tr{
+    height: calc(70vh/10);
+}
+
+#notice-board-area>table>thead>tr>th, #notice-save-board-area>table>thead>tr>th{font-size: 1.4em;}
+
+#notice-save-board-area>table>thead>tr>th:last-child, #notice-save-board-area>table>tbody>tr>td:last-child{text-align: left;}
+
+#notice-board-area>table>tbody tr>th, #notice-board-area>table>tbody tr>td, #notice-save-board-area>table>tbody tr>th, 
+#notice-save-board-area>table>tbody tr>td{
+    padding-top: 2%;
+    font-size: 1.2em;
+}
+
+#notice-board-area>table tr a, #notice-save-board-area>table tr a{
+    text-decoration-line: none;
+    color:black;
+}
+
+.important-notice{background-color: lightgray;}
+
+#notice-board-area>table>thead, #notice-board-area>table tr:last-child, #notice-save-board-area>table>thead,
+#notice-save-board-area>table tr:last-child{
+    border-bottom: 2px solid black;
+}
+
+#notice-search-bar input{
+    position: relative;
+    left:-80%;
+    width: 15%;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.notice-save-board-btn>button{
+    background-color: #FAF0E4;
+}
+
+.notice-save-board-btn>button:hover{
+    background-color: #FF8551;
+    opacity: 0.8;
+    color: white;
+}
+
+.notice-write-btn{background-color: lightblue; border-radius:5px;}
+
+#notice-recept-board-navi{
+    margin-top: 6%;
+    position: relative;
+    /* right: 5%; */
+
+    .page-link{
+        background-color: transparent;
+        color: black;
+    }
+}
+
+#notice-recept-board-navi li{
+    margin-right: 10px;
+}
+
+.notice-recept-page-clicked{
+    background-color: #F7F0D4;
+    border: none;
+}
+
+.notice-write-btn>button, .notice-save-board-btn>button{font-size: 0.9em; text-align: center;}
+.notice-write-btn{width: 13%;}
+.notice-write-btn>button{ width:100%;}
+
+/* .notice-recept-page-clicked:focus-visible {
+    border: none;
+    outline: none;
+} */
+
+/* CLose 공지사항 게시판, 임시저장 게시판 */
+
+/*
+    Start 공지사항글
+*/
+
+.notice-board-area>.notice-content, .notice-board-area>.notice-content-nav{
+    width: 100%;
+    position: relative;
+    /*left: 25%;*/
+    text-align: left;
+}
+
+.notice-board-area>.notice-content{
+    height: 80vh;
+    border: 1px solid black;
+}
+
+.notice-board-area .notice-content-nav-item{
+    border-bottom: 1px solid black;
+    padding: 1% 0;
+}
+
+.notice-board-area>.notice-content>h4{
+    text-align: center; 
+    padding-top: 2%; 
+    padding-bottom: 2%; 
+    border-bottom: 1px solid black;
+    font-weight: 600;
+}
+
+.notice-content-part{
+    padding: 0% 5%;
+    height: 70vh;
+}
+
+.notice-content-header{
+    /* position: absolute;
+    right: 0; */
+    margin-top: 1%;
+    text-align: right;
+    margin-bottom: 0.7%;
+}
+
+.notice-content-header>button{
+	/* 링크 복사 이미지 */
+    background: url("../img/link-copy-icon.png") no-repeat 0 0;
+    background-size: contain;
+    margin-left: 1%;
+    border: none;
+    padding: 0;
+}
+
+.notice-content-header>button>span{
+    background-color: transparent;
+    color:transparent;
+    font-size: 3%;
+}
+
+.notice-content-part textarea, .recpet-content-part pre{
+    text-align: left;
+    width: 100%;
+    height: 90%;
+    border: none;
+    resize: none;
+    cursor: context-menu;
+    &:focus{outline: none;}
+}
+
+/* 현재 공지글 하단에 이전글, 다음글  */
+.notice-board-area .notice-content-nav{
+    background-color: rgb(233, 233, 233);
+}
+
+.notice-board-area .notice-content-nav-item>span{
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-right: 0.8%;
+    border-right: 1px solid black;
+}
+
+.notice-content-nav-item>a{
+    text-decoration: none;
+    color: black;
+}
+
+.notice-board-area>.btn{
+    position: relative;
+    /* left: 70%; */
+    width:15%;
+    margin-top: 5%;
+    padding-top: 1%;
+}
+
+#link-copy-modal{
+    /* display: none; */
+    width: 30%;
+    border: 1px solid black;
+    background-color: white;
+    position: absolute;
+    top: 20%;
+    left:40%;
+}
+
+#link-copy-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#link-copy-modal .modal-window {
+    display: none;
+    width: 100%;
+    background: rgba( 255, 133, 81, 0.70 );  /* 69, 139, 197 */
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#link-copy-modal .modal-title-area {
+    padding-left: 6%;
+    display: inline;
+    text-shadow: 1px 1px 2px gray;
+    color: white;
+    
+}
+#link-copy-modal .modal-title-area h2 {
+    display: inline;
+}
+#link-copy-modal .modal-close-area {
+    display: inline;
+    float: right;
+    margin-right: 6%;
+    padding: 1% 2%;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px gray;
+    color: white;
+    /* border: 0.7px solid blue; */
+    border: none;
+}
+
+#link-copy-modal .modal-content {
+    margin-top: 10%;
+    margin-bottom: 3%;
+    padding: 0 6%;
+    text-shadow: 1px 1px 2px gray;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+/* Close 공지사항글 */
+
+
+/* Start 1:1 문의 */
+
+/* Start 문의내역 */
+
+/* 1:1 문의 하위메뉴 */
+.recept-part{
+    width: 70%;
+    position: relative;
+    /* left: 20%; */
+    left: 5%;
+    /* margin-top: 5%; */
+    /* border: 1px solid red; */
+    display: inline-block;
+}
+
+.recept-sub-menu{
+    border-bottom: 1px solid #FF8551;
+    width: 100%;
+    margin-bottom: 2%;
+    display: flex;
+}
+
+.recept-sub-menu-item{
+    width: 50%;
+    font-size: 1.3rem;
+    background-color: transparent;
+    border: none;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.recpet-sub-menu-selected{
+    background-color: #FF8551; /* antiquewhite */
+    opacity: 0.85;
+    color: white;
+}
+
+.recept-board-text{
+    text-align: left;
+    padding-left: 2%;
+}
+
+/* Start 문의내역(회원창) & 회원문의내역(관리자) */
+
+#recept-search-bar>.container-fluid>#navbarNavDarkDropdown>.navbar-nav>.nav-item #recept-category,
+#manager-recept-search-bar>.container-fluid>#navbarNavDarkDropdown>.navbar-nav>.nav-item #manager-recept-category{
+    width: 300px;
+}
+#manager-recept-search-bar>div>div>ul{width: 20%;}
+
+#manager-recept-search-bar>div>div>ul>span{font-size: 1.2em; font-weight: 400; margin-right: 10%; padding-top: 4%;}
+
+#recept-board-area, #manager-recept-board-area{
+    width: 100%;
+    position: relative;
+    left: 0;
+    margin-top: 1%;
+}
+
+#recept-board-area>table, #manager-recept-board-area>table{margin-bottom: 5%;}
+
+#recept-board-area>table>thead, #manager-recept-board-area>table>thead{border-bottom: 1px solid black;}
+
+#recept-board-area>table>tbody, #manager-recept-board-area>table>tbody{
+    border-left: 1px solid black; 
+    border-right: 1px solid black;
+}
+
+#recept-board-area>table tr, .recept-board-area>#recept-board-area>table tr a,
+#manager-recept-board-area>table tr, .recept-board-area>#manager-recept-board-area>table tr a{
+    font-size: 1.1rem;
+}
+
+#manager-recept-board-area>table>thead>tr>th:last-child, #manager-recept-board-area>table>tbody>tr>td:last-child{text-align: left;}
+
+#recept-board-area>table>thead>tr:last-child, #manager-recept-board-area>table>thead>tr:last-child{
+    margin-left: 2%;
+}
+
+#recept-board-area>table tr a, #manager-recept-board-area>table tr a{text-decoration: none; color: black;}
+
+/* Start 관리자 회원문의 관리 분류탭 */
+
+.manager-recept-selectBoxList {
+    display: flex;
+    grid-column-gap: 2%;
+    margin-bottom: 3%;
+}
+.manager-recept-selectBox{
+    display: flex; 
+    grid-column-gap: 2%; 
+    width: 20%;
+}
+
+.manager-recept-selectBox>span{
+    display: inline-block;
+    width: 40%;
+    font-weight: 600;
+    padding-top: 1%;
+}
+
+/* .manager-select-btn * { box-sizing: border-box; } */
+.manager-select-btn {
+    position: relative;
+    z-index: 1;
+    width: 60%;
+    /* height: 4vh; */
+    border-radius: 4px;
+    border: 0.6px solid #ff8551; /*lightcoral*/
+    cursor: pointer;
+    /* padding-top: 7%; */
+}
+
+.manager-select-btn:before {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); 
+    right: 6%; 
+    z-index: -1;
+}
+
+.manager-select-btn:after {
+    content: '';
+    display: block; 
+    width: 2px;
+    height: 100%; 
+    position: absolute; 
+    top: 0; 
+    right: 25%;
+    background: #ff8551;
+}
+
+.manager-select-btn .manager-select-label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    border: 0 none;
+    outline: 0 none;
+    padding-left: 20%;
+    /* padding-top: 3%; */
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%); 
+}
+
+.manager-select-btn .manager-select-optionList {
+    position: absolute; 
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ff8551;
+    color: #fff;
+    list-style-type: none;
+    padding: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.manager-select-btn.active {
+    z-index: 10;
+}
+
+.manager-select-btn.active .manager-select-optionList {
+    max-height: 300px;
+}
+
+.manager-select-btn .manager-select-optionItem {
+    text-align: center;
+    border-bottom: 1px dashed white; /* rgb(170, 72, 72) */
+    padding: 5% 0;
+    transition: .1s;
+    font-size: 1em;
+}
+
+.manager-select-btn .manager-select-optionItem:hover {
+    background: #e36a36;  /* rgb(175, 93, 93)*/
+}
+
+.manager-select-btn .manager-select-optionItem:last-child {
+    border-bottom: 0 none;
+}
+/* Close 관리자 회원문의 관리 분류탭 */
+
+/* Close 문의내역(회원창) & 회원문의내역(관리자) */
+/* Close 문의내역 */
+
+/* Start 문의하기 폼 */
+.recept-part2{display:none;}
+
+#recept-form-bar>.container-fluid{padding-left: 0;}
+
+#recept-form-bar #recept-form-category-menu>li:hover, #recept-form-bar #recept-form-category-menu>li:active, .recept-form button[type="submit"]:active, .recept-form button[type="submit"]:hover{
+    background-color: #FAF0E4; /* antiquewhite */
+    color: black
+}
+
+#recept-form-content{
+    resize: none;
+}
+
+.recept-form>button{
+    background-color: #f7dfc1; /*bisque*/
+    color: black;
+    border: none;
+    font-size: 1.1em;
+    margin-top: 2%;
+}
+
+/* Start 문의폼 & 공지등록폼 */
+.recept-form>div label, .recept-form>div input, .notice-form>div label, .notice-form>div input{display: inline-block;}
+
+.recept-form>div label, .notice-form>div label{margin: 0 5%;}
+
+.recept-form div, .notice-form div{text-align: left; font-size: 1.2em;}
+
+.recept-form div>label, .notice-form div>label{font-weight: 600;}
+
+.recept-form div>input, .recept-form div>textarea, .notice-form div>input, .notice-form div>textarea{font-size: 0.7em;}
+
+.recept-form div>textarea, .notice-form div>textarea{resize: none;}
+
+.recept-form div>label, .notice-form>div>label{margin-right:0;}
+
+.notice-form>div>div>input[type=checkbox]{margin-top: 2%;}
+
+.notice-form>.notice-form-btn, .notice-form>.notice-form-save-btn, .notice-form>.notice-form-delete-btn{
+    margin-top: 3%;
+    border: none;
+    font-size: 1.1em;
+}
+
+.notice-form>.notice-form-btn, .notice-form>.notice-form-btn:hover{
+    background-color: #A2C0DE; /* 6FADCF */
+}
+
+.notice-form>.notice-form-save-btn, .notice-form>.notice-form-save-btn:hover{
+    background-color: lightgray;
+}
+
+.notice-form>.notice-form-delete-btn, .notice-form>.notice-form-delete-btn:hover{background-color: lightcoral;}
+
+.notice-form>.notice-form-btn:active, .notice-form>.notice-form-save-btn:active, .notice-form>.notice-form-delete-btn:active{background-color: orange;}
+
+/* Close 문의폼 & 공지등록폼 */
+
+/* .recept-form :where(div>div>label){color: red;} */
+
+.recept-form>.recept-right-info-container>div{padding-top:1%; padding-bottom: 3%; font-size:0.8em;}
+
+.recept-right-info-btn{margin-left: 1%; font-size: 0.67em; background-color: transparent;}
+
+.recept-right-info{
+    width: 80%;
+    height: 56vh;
+    border: 1px solid black;
+    background-color: white;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    padding: 3%;
+    display: none;
+}
+
+.recept-right-info>h2{
+    font-weight: 700;
+    margin-bottom: 1%;
+    margin-top: 3%;
+}
+
+.recept-right-info>dl>dt{margin-top: 3%;}
+.recept-right-info>dl>dd{
+    padding-left: 3%;
+}
+.recept-right-info>dl>dd:last-child{font-size: 20px; font-weight: 700;}
+
+.recept-right-info-close{
+    width: 25%; 
+    color: white;
+    position: relative;
+    left: 35%;
+    top: 5%;
+}
+/* Close 문의하기 폼 */
+
+/* Start 문의 알림창 */
+.recept-alert-box{
+    background-color: rgba(250, 182, 72, 0.894); /* 249, 193, 108, 0.594 */
+    color: black;
+    width: 40%;
+    height: 10vh;
+    position: fixed;
+    top: 17%;
+    left: 30%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 2%;
+    /* display: none; */
+}
+
+.recept-alert-box-close{
+    display: inline-block;
+    position: absolute;
+    right: 5%;
+    bottom: 50%;
+    border: none;
+    padding: 1%;
+}
+
+.recept-alert-box-close:hover{background-color: blanchedalmond;}
+
+/* Close 문의 알림창 */
+
+/* Start 문의글 확인 */
+.recpet-part1{text-align: center;}
+
+.recpet-content-header{
+    text-align: left;
+}
+.recept-content-title{
+    border-bottom: 1.2px solid black; 
+    padding-bottom: 1%;
+    margin-top: 2%;
+    font-weight: 700;
+}
+
+.recpet-content-header>p{margin: 2% 0 0 0;}
+
+.recpet-content-header>p>span{
+    font-size: 0.9em;
+    font-weight: 500; 
+    /* text-decoration: underline;  */
+    margin-left: 1%;
+}
+
+.recpet-content-header>p:first-child>span{
+    font-size: 1.2em;
+}
+
+.recpet-content-header>p:last-child>span{
+    background-color: #f7f0d4;
+}
+
+#recpet-content-text, #recpet-answer-content-text{
+    resize: none;
+    width: 100%;
+    /* margin-top: 2%; */
+}
+
+.recept-answer-content{margin-bottom: 5%;}
+
+.recept-answer-content-title{text-align: left; font-weight: 600; font-size: 1.3em;}
+
+#recpet-answer-content-text{margin-top: 0.7%; cursor:context-menu;}
+
+.recept-back-category-btn{margin-top: 6%; font-size: 1.1em;}
+/* Close 문의글 확인 */
+
+/* Start 관리자 기능 속성 */
+.customer-center-manager{
+    display: block;
+}
+
+/* Close 관리자 기능 속성 */
+
+/* Start 회원 문의 답변 */
+
+.customer-center-title{
+    margin-top: 20%;
+    margin-bottom: 3%;
+}
+
+.recept-reply-btn{
+    position: absolute;
+    right: 0;
+    bottom: -4%;
+    background-color: #faad8c;
+    color: white;
+}
+
+.recept-answer-content{margin-bottom: 0;}
+/* Close 회원 문의 답변 */
+
+/* Start 문의 파일첨부 */
+.reception-file-area{text-align: left; width: 100%;}
+
+.recept-file-upload-btn {
+    width: 10vw;
+    padding: 5% 0;
+    background: transparent;
+    border: 1px solid rgb(77,77,77);
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+
+    &:hover {
+      background: rgb(77,77,77);
+      color: #fff;
+    }
+}
+
+.recept-file-originName{
+    margin-bottom: 0;
+}
+
+.reception-file-down-btn{
+    color: black; 
+    text-decoration: none;
+    &:hover{color: yellow}
+}
+/* Close 문의 파일첨부 */

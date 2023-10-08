@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<entry key="countAllReceptionList">
+		select count(*) count from reception where user_id=?
+	</entry>
+	
+	<entry key="countReceptionList">
+		select count(*) count from reception where user_id=? and category=?
+	</entry>
+	
+	<entry key="selectAllReceptionList">
+		select *
+		from (select rownum r, reception_no, title, upload_date, case when answer is null
+														then 'N'
+														else 'Y'
+													end as status
+		from reception left join recept_answer using(reception_no) where user_id=?)
+		where r between ? and ?
+	</entry>
+	
+	<entry key="selectReceptionList">
+		select *
+		from (select rownum r, title, upload_date, case when answer is null
+														then 'N'
+														else 'Y'
+													end as status
+		from reception left join recept_answer using(reception_no) where user_id=? and category=?)
+		where r between ? and ?
+	</entry>
+	
+	<entry key="selectAllReception">
+		select *
+		from (select rownum r, reception_no, user_id, title, text, upload_date, answer
+		from reception left join recept_answer using(reception_no) where user_id=?)
+		where r=?
+	</entry>
+	
+	<entry key="selectReception">
+		select *
+		from (select rownum r, reception_no, user_id, title, text, upload_date, answer
+		from reception left join recept_answer using(reception_no) where user_id=? and category=?)
+		where r=?
+	</entry>
+	
+	<entry key="submitReception">
+		insert into reception(reception_no, user_id, title, text, category)
+		values(decode(?, '계정', 'A', '예약', 'R', 'E')||lpad(seq_recept.nextval, 4, 0), ?, ?, ?, ?)
+	</entry>
+	
+	<entry key="submitReceptionFile">
+		insert into recept_attachment(reception_no, orgin_name, change_name, file_path)
+		values(decode(?, '계정', 'A', '예약', 'R', 'E')||lpad(seq_recept.currval, 4, 0), ?, ?, ?)
+	</entry>
+	
+	<entry key="countAllMemberReceptionList">
+		select count(*)
+		from(select r.*, case when answer is null then '대기' else '완료' end as status
+		from (select * from reception left join recept_answer using(reception_no)) r)
+		where status=?
+	</entry>
+	
+	<entry key="countMemberReceptionList">
+		select count(*)
+		from(select r.*, case when answer is null then '대기' else '완료' end as status
+		from (select * from reception left join recept_answer using(reception_no)) r)
+		where category=? and status=? 
+	</entry>
+	
+	<entry key="selectAllMemberReceptionList">
+		select *
+		from (select rownum r, recept.* 
+		from (select reception_no, title, upload_date, case when answer is null then '대기' else '완료' end as status
+				from reception left join recept_answer using(reception_no)) recept
+		where status=?)
+		where r between ? and ?
+	</entry>
+	
+	<entry key="selectMemberReceptionList">
+		select *
+		from (select rownum r, recept.* 
+		from (select reception_no, title, upload_date, category, case when answer is null then '대기' else '완료' end as status
+				from reception left join recept_answer using(reception_no)) recept
+		where category=? and status=?)
+		where r between ? and ?
+	</entry>
+	
+	<entry key="selectMemberReception">
+		select *
+		from reception left join recept_answer using(reception_no)
+		where reception_no=?
+	</entry>
+	
+	<entry key="selectMemberReceptionFile">
+		select *
+		from recept_attachment
+		where reception_no=?
+	</entry>
+	
+	<entry key="insertReceptionReply">
+		insert into recept_answer(reception_no, answer) values(?, ?)
+	</entry>
+</properties>

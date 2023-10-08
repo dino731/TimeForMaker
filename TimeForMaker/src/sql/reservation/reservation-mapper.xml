@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   
+	<entry key="searchPeriod">
+	   SELECT *
+	   FROM RESERVATION
+	   WHERE RESERVATION_DATE BETWEEN TO_DATE(?, 'yy/MM/dd') AND TO_DATE(?, 'yy/MM/dd')
+	</entry>
+	
+	<entry key="searchInfo">
+	 SELECT * FROM RESERVATION
+	 WHERE RESERVATION_NO = ?
+	</entry>
+	
+	<entry key="searchStatus">
+	   SELECT *
+	   FROM RESERVATION
+	   WHERE RESERVATION_STATUS = ?
+	</entry>
+	
+	<entry key="search">
+	   SELECT *
+	   FROM RESERVATION
+	   WHERE 1=1
+	      AND %1 
+	      AND %2 
+	      AND RESERVATION_STATUS LIKE '%%' 
+	</entry>
+
+
+	<entry key="reservationMore">
+		SELECT RESERVATION_NO, USER_NAME, CLASS_NAME, USER_NUM, RESERVATION_DATE, RESERVATION_TIME, USER_PHONE, USER_ID, RESERVATION_STATUS
+		FROM RESERVATION
+		JOIN MEMBER USING(USER_ID)
+		JOIN PRODUCT USING(PRODUCT_NO)
+		WHERE RESERVATION_NO = ?
+	</entry>
+	
+	
+	<entry key="acceptReservation">
+		UPDATE RESERVATION
+		SET RESERVATION_STATUS = '예약완료'
+		WHERE RESERVATION_NO = ?
+	</entry>
+	<entry key="deleteReservation">
+		UPDATE RESERVATION
+		SET RESERVATION_STATUS = '예약취소'
+		WHERE RESERVATION_NO = ?
+	</entry>
+	
+	
+	<entry key="insertReservation">
+		INSERT into RESERVATION(
+			USER_ID, 
+			PRODUCT_NO, 
+			USER_NUM, 
+			RESERVATION_DATE)
+    	VALUES(?, ?, ?, TO_DATE(?, 'yy/MM/dd'));
+	</entry>
+	
+	<!-- 페이징바관련 -->
+	<entry key="selectListCount">
+		SELECT COUNT(*)
+		FROM RESERVATION
+	</entry>
+	<entry key="selectList">
+		SELECT *
+		FROM (
+			SELECT ROWNUM RNUM , A.*
+			FROM(
+				SELECT
+					RESERVATION_NO,
+					RESERVATION_DATE,
+					RESERVATION_STATUS,
+					RESERVATION_TIME,
+					PAYMENT_STATUS,
+					USER_NUM,
+					USER_ID,
+					PRODUCT_NO
+				FROM RESERVATION
+				JOIN MEMBER USING(USER_ID)
+				JOIN PRODUCT USING(PRODUCT_NO)
+				)A
+			)
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	
+	
+	
+
+</properties>

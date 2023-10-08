@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/*
+관리자 헤드, 푸터 Css
+*/
+.main_nav_all{ /*상단바 고정*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 9999;
+    opacity: 0.9;
+}
+.main_logo{
+    width: 60%;
+}
+.main_footer{
+    background-color: #FAF0E4;/*푸터 배경색*/
+}
+.admin_header{
+    display: flex;
+    flex-direction: column;
+}
+.main_adminbar{
+    width: 100%;
+}
+.main_admin_menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.main_admin_li{
+    margin-right: 100px;
+}
+
+.main_admin_li:last-child{
+    margin-right: 0;
+}
+.main_admin_link {
+display: block;
+padding: 10px;
+text-decoration: none;
+color: black;
+
+}
+.main_admin_link:hover { 
+    color: #FF8551;
+    text-decoration-style: solid;
+    text-decoration-thickness: 3px; /*밑줄 굵기 조절*/
+    text-decoration-color: #FF8551;
+    text-decoration-line: underline;
+}
